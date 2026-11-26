@@ -9,9 +9,9 @@ resource "google_artifact_registry_repository" "images" {
 
 # Cloud Run v2 Service hosting the SilverShield ADK FastAPI server.
 resource "google_cloud_run_v2_service" "silvershield" {
-  name       = var.service_name
-  location   = var.region
-  ingress    = "INGRESS_TRAFFIC_ALL"
+  name     = var.service_name
+  location = var.region
+  ingress  = "INGRESS_TRAFFIC_ALL"
   depends_on = [
     google_project_service.enabled_apis,
     google_project_iam_member.app_sa_roles,
