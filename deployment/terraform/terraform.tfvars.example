@@ -1,0 +1,15 @@
+# Copy to terraform.tfvars (git-ignored) and fill in your GCP project values.
+# NEVER put plaintext passwords or API keys in this file — upload secrets to
+# GCP Secret Manager using `gcloud secrets versions add`.
+
+project_id              = "your-gcp-project-id"
+region                  = "us-central1"
+environment             = "dev"
+service_name            = "silvershield-guardian"
+container_image         = "us-central1-docker.pkg.dev/your-gcp-project-id/silvershield-guardian/app:latest"
+fast_model_name         = "gemini-2.5-flash"
+reasoning_model_name    = "gemini-2.5-pro"
+enable_cloud_dlp        = true
+enable_model_armor      = false
+enable_vertex_ai_search = false
+github_repository       = "matzie5/silvershield-guardian"
